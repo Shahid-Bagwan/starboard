@@ -220,7 +220,7 @@ export default function FilterBar({ filters, onFilterChange, onReset }: FilterBa
                 min={0}
                 max={50000000}
                 step={1000000}
-                onValueChange={(value) => onFilterChange({ priceRange: value })}
+                onValueChange={(value: [number, number]) => onFilterChange({ priceRange: value })}
               />
               <div className="flex items-center justify-between">
                 <span className="text-sm">{formatCurrency(filters.priceRange[0])}</span>
@@ -240,7 +240,7 @@ export default function FilterBar({ filters, onFilterChange, onReset }: FilterBa
                 min={0}
                 max={10}
                 step={0.1}
-                onValueChange={(value) => onFilterChange({ capRateRange: value })}
+                onValueChange={(value: [number, number]) => onFilterChange({ capRateRange: value })}
               />
               <div className="flex items-center justify-between">
                 <span className="text-sm">{filters.capRateRange[0]}%</span>
